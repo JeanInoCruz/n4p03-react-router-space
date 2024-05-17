@@ -34,13 +34,13 @@ export default function Destination() {
             />
           </div>
           <div className="grid gap-1 lg:gap-10 xl:gap-16 w-full lg:mt-10 text-center lg:text-left">
-            <div className="flex justify-between w-full md:w-3/5 mx-auto lg:w-full">
+            <div className="flex justify-between lg:flex lg:justify-normal lg:gap-8 w-full md:w-3/5 mx-auto lg:w-full">
               {data.destinations.map((dest, index) => (
                 <button
                   key={dest.name}
                   onClick={() => setActive(index)}
-                  className={`border-b-4 pb-3 uppercase ${
-                    index === active ? "border-white" : "border-white/50"
+                  className={`pb-3 uppercase ${
+                    index === active ? "border-b-4 border-white " : "border-white/50"
                   } hover:border-white tracking-[2.7px]`}
                 >
                   {dest.name}

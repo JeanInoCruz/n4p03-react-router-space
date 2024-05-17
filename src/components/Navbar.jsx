@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState(0);
+
   const location = document.location.pathname;
 
   const links = [
@@ -22,14 +24,15 @@ export default function Navbar() {
       <Link to="/">
         <img src={logo} alt="logo" className="lg:ml-6" />
       </Link>
-      <div className="hidden md:flex items-center justify-between md:w-7/12 2xl:w-1/2 md:px-6 lg:px-16 xl:px-20 lg:gap-11 xl:gap-12 bg-opacity-5 rounded-l-lg backdrop-blur-lg bg-stone-100">
+      <div className="hidden md:flex lg:h-24 items-center justify-between md:w-7/12 2xl:w-1/2 md:px-6 lg:px-16 xl:px-20 lg:gap-11 xl:gap-12 bg-opacity-5 rounded-l-lg backdrop-blur-lg bg-stone-100">
         {links.map((link, index) => (
           <Link
             key={link.path}
             to={link.path}
-            className={`border-b-4 ${
+            onClick={() => setActive(index)}
+            className={`border-b-4 ${index === active ? "border-white" : "border-white/50",
               location == link.path ? "border-white" : "border-transparent"
-            } hover:border-white/50 md:py-6 lg:py-10`}
+            } hover:border-white/50 md:py-6 lg:py-7`}
           >
             <span className="hidden lg:inline font-bold mr-3">0{index}</span>
             {link.name}

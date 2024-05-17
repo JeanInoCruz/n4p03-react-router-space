@@ -8,12 +8,12 @@
     margin: 0;
 }
 
-.shadowed::after {
+/* .shadowed::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 50%; /* Ajusta el porcentaje según la cantidad de oscurecimiento que desees */
+    height: 50%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
+} */
